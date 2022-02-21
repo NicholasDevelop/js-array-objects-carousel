@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-item{
+    position: relative;
+}
+
+.main-item{
+    height: 70vh;
+    width: 65vw;
+}
+
+.photo-description{
+    position: absolute;
+    color: white;
+    bottom: 30px;
+    right: 20px;
+}
+
+.photo-description .title, .subtitle{
+    text-align: right;
+}
+
+.slide-wrapper .item{
+    height: calc( 70vh / 5 );
+    width: 15vw;
+}
+
+.item img, .main-item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider{
+    position: relative;
+}
+
+.slider .item{
+    opacity: 0.5;
+}
+
+.slider .item.active, .slider .item:hover{
+    opacity: 1;
+}
+
+.slider .item.active{
+    border: 3px solid rgba(255, 255, 255, 0.418);
+}
+
+.arrows{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+    user-select: none;
+}
+
+.arrows span{
+    cursor: pointer;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 9999px;
+    width: 25px;
+    height: 25px;
+}
+
+.arrows .prev{
+    position: absolute;
+    top: 10px;
+}
+
+.arrows .next{
+    position: absolute;
+    bottom: 10px;
+}
+
+.arrows .prev, .arrows .next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrows span i{
+    font-size: 20px;
+}
