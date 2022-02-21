@@ -71,9 +71,9 @@ prev.addEventListener('click', function(){
         currentIndex = slides.length - 1;
         images[currentIndex].classList.add('active');
     }
-    mainItemImg.src = slides.items[currentIndex];
-    photoTitle.innerHTML = slides.title[currentIndex];
-    photoDescription.innerHTML = slides.text[currentIndex];
+    mainItemImg.src = slides[currentIndex].items;
+    photoTitle.innerHTML = slides[currentIndex].title;
+    photoDescription.innerHTML = slides[currentIndex].text;
 })
 
 next.addEventListener('click', function(){
@@ -86,7 +86,7 @@ next.addEventListener('click', function(){
         currentIndex = 0;
         images[currentIndex].classList.add('active');
     }
-    mainItemImg.src = slides.items[currentIndex];
-    photoTitle.innerHTML = slides.title[currentIndex];
-    photoDescription.innerHTML = slides.text[currentIndex];
+    mainItemImg.src = slides[currentIndex].items;
+    photoTitle.innerHTML = slides[currentIndex].title;
+    photoDescription.innerHTML = slides[currentIndex].text;
 })
