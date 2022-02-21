@@ -1,26 +1,30 @@
-const items = [
-    'img/01.jpg',
-    'img/02.jpg',
-    'img/03.jpg',
-    'img/04.jpg',
-    'img/05.jpg'
+const slides = [
+    {
+        items : 'img/01.jpg',
+        title : 'Svezia',
+        text : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+    },
+    {
+        items : 'img/02.jpg',
+        title : 'Svizzera',
+        text : 'Lorem ipsum',
+    },
+    {
+        items : 'img/03.jpg',
+        title : 'Gran Bretagna',
+        text : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    },
+    {
+        items : 'img/04.jpg',
+        title : 'Germania',
+        text :'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+    },
+    {
+        items : 'img/05.jpg',
+        title : 'Paradise',
+        text : 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+    }
 ];
-
-const title = [
-    'Svezia',
-    'Svizzera',
-    'Gran Bretagna',
-    'Germania',
-    'Paradise'
-]
-
-const text = [
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
-    'Lorem ipsum',
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
-    'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
-]
 
 
 const slideWrapper = document.querySelector('.slide-wrapper');
@@ -34,13 +38,13 @@ const mainItemImg = document.querySelector('.main-item > img');
 
 let currentIndex = 0;
 
-for( let i = 0; i < items.length; i++){
+for( let i = 0; i < slides.length; i++){
 
     const divElement = document.createElement('div');
     divElement.classList.add('item');
     const image = document.createElement('img');
 
-    image.src = items[i];
+    image.src = slides[i].items;
 
     
     slideWrapper.append(divElement);
@@ -64,16 +68,16 @@ prev.addEventListener('click', function(){
         images[currentIndex].classList.add('active');
     }else{
         images[currentIndex].classList.remove('active');
-        currentIndex = items.length - 1;
+        currentIndex = slides.length - 1;
         images[currentIndex].classList.add('active');
     }
-    mainItemImg.src = items[currentIndex];
-    photoTitle.innerHTML = title[currentIndex];
-    photoDescription.innerHTML = text[currentIndex];
+    mainItemImg.src = slides.items[currentIndex];
+    photoTitle.innerHTML = slides.title[currentIndex];
+    photoDescription.innerHTML = slides.text[currentIndex];
 })
 
 next.addEventListener('click', function(){
-    if( currentIndex < items.length - 1 ){
+    if( currentIndex < slides.length - 1 ){
         images[currentIndex].classList.remove('active');
         currentIndex++;
         images[currentIndex].classList.add('active');
@@ -82,7 +86,7 @@ next.addEventListener('click', function(){
         currentIndex = 0;
         images[currentIndex].classList.add('active');
     }
-    mainItemImg.src = items[currentIndex];
-    photoTitle.innerHTML = title[currentIndex];
-    photoDescription.innerHTML = text[currentIndex];
+    mainItemImg.src = slides.items[currentIndex];
+    photoTitle.innerHTML = slides.title[currentIndex];
+    photoDescription.innerHTML = slides.text[currentIndex];
 })
