@@ -38,20 +38,20 @@ const mainItemImg = document.querySelector('.main-item > img');
 
 let currentIndex = 0;
 
-for( let i = 0; i < slides.length; i++){
+slides.forEach( ( {items} ) => {
 
     const divElement = document.createElement('div');
     divElement.classList.add('item');
     const image = document.createElement('img');
 
-    image.src = slides[i].items;
+    image.src = items;
 
     
     slideWrapper.append(divElement);
     divElement.append(image);
 
     slideWrapper.innerHTML + divElement;
-}
+})
 
 const images = [...document.getElementsByClassName('item')];
 
