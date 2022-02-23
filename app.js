@@ -38,7 +38,7 @@ const mainItemImg = document.querySelector('.main-item > img');
 
 let currentIndex = 0;
 
-slides.forEach( ( {items} ) => {
+slides.forEach( ( {items,title,text} ) => {
 
     const divElement = document.createElement('div');
     divElement.classList.add('item');
@@ -56,6 +56,9 @@ slides.forEach( ( {items} ) => {
 const images = [...document.getElementsByClassName('item')];
 
 images[currentIndex].classList.add('active');
+mainItemImg.src = slides[currentIndex].items;
+photoTitle.innerHTML = slides[currentIndex].title;
+photoDescription.innerHTML = slides[currentIndex].text;
 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
